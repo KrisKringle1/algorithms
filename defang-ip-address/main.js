@@ -9,9 +9,12 @@ var twoSum = function (nums, target) {
   //if matching target, return index and index + 1
 
   for (let i = 0; i < nums.length; i++) {
-    debugger;
+
     let newNumber = nums[i];
     for (let j = 0; j < nums.length; j++) {
+      if (j === i) {
+        j++
+      }
       if (newNumber + nums[j] === target) {
         return [i, j]
       }

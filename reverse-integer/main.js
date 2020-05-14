@@ -8,10 +8,16 @@ var reverse = function (x) {
   //loop through string
   //pop off each element in the string into new string
   //return parse int of new string
-  let numString = x.toString()
+  const numString = x.toString()
+  let reverseString = ""
+  let counter = 1;
   for (let i = 0; i < numString.length; i++) {
-    let newString
-  }
 
+    reverseString += numString.slice(numString.length - counter)
+
+    counter++;
+
+  }
+  return reverseString;
 
 };

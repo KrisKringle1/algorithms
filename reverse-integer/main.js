@@ -10,14 +10,26 @@ var reverse = function (x) {
   //return parse int of new string
   const numString = x.toString()
   let reverseString = ""
-  let counter = 1;
+  let numStringLength = numString.length;
+  let numStringIndex = numString.length - 1
+
+  if (numStringLength >= 10) {
+    return 0
+  }
+
   for (let i = 0; i < numString.length; i++) {
-
-    reverseString += numString.slice(numString.length - counter)
-
-    counter++;
+    reverseString += numString.slice(numStringIndex, numStringLength)
+    numStringLength--;
+    numStringIndex--;
 
   }
-  return reverseString;
+
+  if (numString.includes('-')) {
+    return parseInt(reverseString) * -1;
+  } else {
+    return parseInt(reverseString);
+  }
+
+
 
 };

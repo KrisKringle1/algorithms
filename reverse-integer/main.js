@@ -13,7 +13,7 @@ var reverse = function (x) {
   let numStringLength = numString.length;
   let numStringIndex = numString.length - 1
 
-  if (numStringLength >= 10) {
+  if (numStringLength >= 11) {
     return 0
   }
 
@@ -24,7 +24,9 @@ var reverse = function (x) {
 
   }
 
-  if (numString.includes('-')) {
+  if (parseInt(reverseString) * -1 < -2147483648 || parseInt(reverseString) > 2147483647) {
+    return 0
+  } else if (numString.includes('-')) {
     return parseInt(reverseString) * -1;
   } else {
     return parseInt(reverseString);

@@ -1,29 +1,17 @@
 
 
 
-var longestCommonPrefix = function (strs) {
-  //loop through array
-  //check  check if index at length matches any other index at length
-  //push results into new string
-
-  // const seen = {};
-  let outputString = ""
-
-  for (let arrayIndex = 0; arrayIndex < strs.length; arrayIndex++) {
-
-    const word = strs[arrayIndex];
-    if (strs.every(currentWord => currentWord.includes("aa"))) {
-      return word;
+var longestCommonPrefix = function (strs) {  // n(m)
+  if (!strs.length) return '';
+  let prefix = strs[0];
+  for (let i = 0; i < strs.length; i++) {  // n
+    const currentWord = strs[i];
+    while (currentWord.indexOf(prefix) !== 0) {    // m
+      prefix = prefix.slice(0, -1);
+      if (!prefix) return '';
     }
-
-    for (let stringIndex = 0; stringIndex < strs[arrayIndex].length; stringIndex++) {
-      const currentLetter = word[stringIndex];
-
-      if (strs.every(currentWord => currentWord.includes(currentLetter)) && !outputString.includes(currentLetter)) {
-        outputString += currentLetter
-      }
-    }
-
   }
-  return outputString;
-}
+
+  return prefix;
+
+};

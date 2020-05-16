@@ -4,7 +4,7 @@
  */
 var reverseString = function (array) {
   let newString = "";
-  debugger;
+
   const arrayLength = array.length
   for (let i = 0; i < arrayLength; i++) {
     let firstChar = array.shift()

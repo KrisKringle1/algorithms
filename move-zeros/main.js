@@ -8,10 +8,17 @@ var moveZeroes = function (nums) {
   //loop through array
   //if 0 - unshift out of array
   //shift back into array
-  for (let i = 0; i < nums.length i++) {
+
+  let numLength = nums.length;
+  for (let i = 0; i < numLength; i++) {
     if (nums[i] === 0) {
+      nums.splice(i, 1)
+      nums.push(0)
+      numLength--;
+      i--;
 
     }
   }
+  return nums;
 
 }

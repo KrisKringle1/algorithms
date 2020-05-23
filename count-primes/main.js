@@ -30,3 +30,6 @@ var countPrimes = function (initialNumber) {
   }
   return counter;
 }
+
+
+

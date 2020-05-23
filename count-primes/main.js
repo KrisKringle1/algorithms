@@ -16,7 +16,7 @@ var countPrimes = function (initialNumber) {
   }
 
 
-  for (let i = 0; i <= initialNumber; i++) {
+  for (let i = 2; i < initialNumber; i++) {
     debugger;
     if (isPrime(i)) {
       counter++

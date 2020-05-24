@@ -10,17 +10,18 @@ var removeDuplicates = function (nums) {
 
 
   var seenObj = {}
+  let arrayLength = nums.length
 
-  for (let i = 0; i < nums.length; i++) {
+  for (let i = 0; i < arrayLength; i++) {
 
     if (!seenObj[nums[i]]) {
-      seenObj[nums[i]] = nums[i]
+      seenObj[nums[i]] = 'i exist'
     } else {
       nums.splice(i, 1)
-
+      arrayLength--;
       i--;
     }
 
   }
-  return nums;
+  return nums.length;
 };

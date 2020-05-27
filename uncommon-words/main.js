@@ -4,11 +4,44 @@
  * @return {string[]}
  */
 var uncommonFromSentences = function (firstString, secondString) {
-  //create a for loop with two iterators
-  //one that iterates through first string, another that iterates through the 2nd string
-  //push each letter into a new string until you hit a space
-  //compare the two strings, if they are the same, continue
-  //if they are different, return the two words
-  //if you reach the end of the loop
+  //convert first string to an array and assign it to a variable
+  //convert second string to an array and assign it to a variable
+  //do a for loop in the first string
+  //check if string[i] is included in array
+  //
+  //if the array includes the value
+  //indexOf the value
+  //splice out value
+  //if it doesnt contain the value, push into array
+
+  //loop through second string
+  //check if each index is included in first string
+  //if it is not, put the variable in an array
+
+  //return array
+
+  const firstArray = firstString.split(' ');
+  const secondArray = secondString.split(' ');
+  const combinedArray = firstArray.concat(secondArray);
+  const commonWords = [];
+  const uncommonWords = [];
+
+  combinedArray.forEach(element => {
+    debugger;
+    if (uncommonWords.includes(element) === false && commonWords.includes(element) === false) {
+
+      uncommonWords.push(element)
+    } else {
+      let index = uncommonWords.indexOf(element)
+
+      commonWords.push(uncommonWords.splice(index, 1))
+    }
+
+  })
+
+
+
+
+  return uncommonWords;
 
 };

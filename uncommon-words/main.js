@@ -84,7 +84,8 @@ var uncommonFromSentences = function (firstString, secondString) {
   const seen = {}
 
   for (let i = 0; i < combinedArray.length; i++) {
-    if (!seen[combinedArray[i]]) {
+    // let currentIndex = combinedArray.indexOf()
+    if (combinedArray.includes(combinedArray[i]) && i !== currentIndex]) {
       seen[combinedArray[i]] = 'hey'
     } else {
       combinedArray.splice(i, 1)

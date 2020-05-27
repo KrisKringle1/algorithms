@@ -26,22 +26,49 @@ var uncommonFromSentences = function (firstString, secondString) {
   const commonWords = [];
   const uncommonWords = [];
 
-  combinedArray.forEach(element => {
+  // combinedArray.forEach(element => {
+  //   debugger;
+  //   if (uncommonWords.includes(element) === false && commonWords.includes(element) === false) {
+
+  //     uncommonWords.push(element)
+  //   } else {
+  //     let index = uncommonWords.indexOf(element)
+
+  //     commonWords.push(uncommonWords.splice(index, 1))
+  //   }
+
+  // })
+
+
+  // for(let i = 0; i < combinedArray.length; i++){
+  //   if(!uncommonWords.includes(combinedArray[i]) && !commonWords.includes(combinedArray[i])){
+  //     uncommonWords.push(combinedArray[i])
+  //   }else if(uncommonWords.includes(combinedArray[i])){
+  //     let index = uncommonWords.indexOf(combinedArray[i])
+  //     let usedWord = uncommonWords.splice(index, 1);
+  //     commonWords.push(usedWord)
+  //   }
+  // }
+  const emptyArray = []
+  for (let i = 0; i < combinedArray.length; i++) {
     debugger;
-    if (uncommonWords.includes(element) === false && commonWords.includes(element) === false) {
+    let wordIndex = combinedArray.indexOf(combinedArray[i])
+    if (combinedArray.includes(combinedArray[i]) && i !== wordIndex) {
 
-      uncommonWords.push(element)
-    } else {
-      let index = uncommonWords.indexOf(element)
+      combinedArray.forEach(element => {
+        // if (element === combinedArray[i]) {
+        //   let index = combinedArray.indexOf(element);
+        //   combinedArray.splice(index, element)
+        // }
+        emptyArray.push(element)
 
-      commonWords.push(uncommonWords.splice(index, 1))
+
+      })
+
     }
-
-  })
-
+  }
 
 
-
-  return uncommonWords;
+  return emptyArray;
 
 };

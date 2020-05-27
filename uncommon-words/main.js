@@ -30,7 +30,7 @@ var uncommonFromSentences = function (firstString, secondString) {
 
 
   const filteredArray = combinedArray.filter((element, index, array) => {
-    array.indexOf(element) === array.lastIndexOf(element);
+    return array.indexOf(element) === array.lastIndexOf(element);
   })
 
   return filteredArray;

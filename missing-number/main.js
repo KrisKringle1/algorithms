@@ -3,14 +3,15 @@
  * @return {number}
  */
 var missingNumber = function (nums) {
-  let number = 0
-  var i = 0
 
-  for (i; i < nums.length; i++) {
+  let i = 0;
+
+  while (i < nums.length) {
     debugger;
-    number = i;
-    if (!nums.indexOf(i)) {
-      return number;
+    if (nums.indexOf(i) === -1) {
+      return i;
     }
+    i++;
   }
-};
+  return i++;
+}

@@ -11,3 +11,7 @@ var singleNumber = function (nums) {
 
   return filteredArray;
 };
+
+
+//solve without filter 
+

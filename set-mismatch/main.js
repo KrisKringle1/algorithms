@@ -26,26 +26,50 @@ var findErrorNums = function (nums) {
 
   // }
   // return emptyArray;
+  // const emptyArray = []
+
+
+  // for (let i = 0; i < nums.length; i++) {
+  //   if (emptyArray.length === 2) {
+  //     return emptyArray
+  //   }
+  //   if (nums.indexOf(nums[i]) !== nums.lastIndexOf(nums[i])) {
+  //     debugger;
+  //     if (!nums.includes(nums[i] - 1) && i !== 0 && nums[i] - 1 !==0) {
+  //       emptyArray.push(nums[i])
+  //       emptyArray.push(nums[i] - 1)
+
+  //     } else if (!nums.includes(nums[i] + 1) && i !== 0) {
+  //       emptyArray.push(nums[i])
+  //       emptyArray.push(nums[i] + 1)
+  //     }
+
+  //   }
+
+  // }
+
+  // return emptyArray;
+
   const emptyArray = []
+  let index = 0;
+  let checkNumber = 1;
 
-
-  for (let i = 0; i < nums.length; i++) {
-    if (nums.indexOf(nums[i]) !== nums.lastIndexOf(nums[i])) {
-      emptyArray.push(nums[i])
-      if (!nums.includes(nums[i] - 1)) {
-        emptyArray.push(nums[i] - 1)
-
-      } else if (!nums.includes(nums[i] + 1)) {
-        emptyArray.push(nums[i] + 1)
-      }
-
+  while (index < nums.length) {
+    if (nums.indexOf(nums[index]) !== nums.lastIndex(nums[index])) {
+      emptyArray.push(nums[index])
+      break;
     }
+    index++;
 
   }
 
+  while (nums.includes(checkNumber)) {
+    checkNumber++;
+  }
+
+  emptyArray.push(checkNumber);
+
   return emptyArray;
-
-
 
 
 

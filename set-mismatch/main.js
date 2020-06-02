@@ -55,7 +55,7 @@ var findErrorNums = function (nums) {
   let checkNumber = 1;
 
   while (index < nums.length) {
-    if (nums.indexOf(nums[index]) !== nums.lastIndex(nums[index])) {
+    if (nums.indexOf(nums[index]) !== nums.lastIndexOf(nums[index])) {
       emptyArray.push(nums[index])
       break;
     }

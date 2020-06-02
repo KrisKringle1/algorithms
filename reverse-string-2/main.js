@@ -54,19 +54,27 @@ const reverseStr = (s, k) => {
   //slice up to k into the string
   //reverse the slice and append to empty string
   //slice out k amount in s and append to empty string,
+
+  if (k === 1) {
+    return s;
+  }
   let emptyString = "";
-  let reverseIndicator = false;
+  let reverseIndicator = true;
   const reverse = (string) => {
     for (let i = string.length - 1; i > -1; i--) {
       emptyString += string[i]
     }
     return emptyString
   }
+
   let i = 0;
   let kCopy = k;
 
-  while (emptyString.length !== s.length) {
-    debugger;
+  while (emptyString.length < s.length) {
+
+    if (i >= s.length) {
+      reverseIndicator = true;
+    }
 
     if (!reverseIndicator) {
       emptyString += s.slice(i, kCopy)
@@ -77,10 +85,9 @@ const reverseStr = (s, k) => {
       let stringToReverse = s.slice(i, kCopy);
       reverse(stringToReverse);
       i += k;
-      kCopy += kCopy
+      kCopy += k;
       reverseIndicator = false;
     }
-
 
   }
 

@@ -5,18 +5,32 @@ const timeElement = document.getElementById('time')
 let add;
 const start = document.querySelector('.start');
 const stop = document.querySelector('.stop');
-const timeValue = timeElement.innerText
-const heyElement = document.getElementById('hey')
-const thereElement = document.getElementById('there')
+const minutes = document.getElementById('minutes')
+const seconds = document.getElementById('seconds')
+const tenSeconds = document.getElementById('tenSeconds')
+
+
 
 
 
 
 function startTime() {
   add = setInterval(function () {
-    console.log('why hello there')
-    timeElement.innerText++
-    heyElement.innerText--
+
+    if (seconds.innerText == 9) {
+      tenSeconds.innerText++
+      seconds.innerText = 0
+    } else {
+      seconds.innerText++
+    }
+
+    if (seconds.innerText == 9 && tenSeconds.innerText == 6) {
+      minutes.innerText++
+      seconds.innerText = 0
+      tenSeconds.innerText = 0
+    }
+
+
   }, 1000)
 }
 

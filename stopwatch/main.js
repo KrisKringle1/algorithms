@@ -24,7 +24,7 @@ function startTime() {
       seconds.innerText++
     }
 
-    if (seconds.innerText == 9 && tenSeconds.innerText == 6) {
+    if (tenSeconds.innerText == 6) {
       minutes.innerText++
       seconds.innerText = 0
       tenSeconds.innerText = 0

@@ -1,9 +1,14 @@
 
 
 
-var timeElement = document.getElementById('time'), add;
-var start = document.querySelector('.start');
-var stop = document.querySelector('.stop');
+const timeElement = document.getElementById('time')
+let add;
+const start = document.querySelector('.start');
+const stop = document.querySelector('.stop');
+const timeValue = timeElement.innerText
+const heyElement = document.getElementById('hey')
+const thereElement = document.getElementById('there')
+
 
 
 
@@ -11,6 +16,7 @@ function startTime() {
   add = setInterval(function () {
     console.log('why hello there')
     timeElement.innerText++
+    heyElement.innerText--
   }, 1000)
 }
 

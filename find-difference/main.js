@@ -4,44 +4,30 @@
  * @return {character}
  */
 var findTheDifference = function (s, t) {
-  //create a while loop
-  //while s.includes(t[i]) i ++
-  //return t[i]
-  let i = 0;
-  while (s.includes(t[i])) {
-    i++
-  }
-  if (!t[i]) {
 
-    for (let i = 0; i < t.length; i++) {
-      if (t.indexOf(t[i]) !== t.lastIndexOf(t[i])) {
-        return t[i]
+  var turnIntoObject = function (string) {
+
+    const seen = {}
+    for (let i = 0; i < string.length; i++) {
+
+      if (!seen[string[i]]) {
+
+        seen[string[i]] = 1
+      } else {
+        seen[string[i]] += 1
       }
     }
-
+    return seen
   }
-  return t[i];
-};
 
 
-var eachLetter = function (string, letter) {
+  const object1 = turnIntoObject(s);
+  const object2 = turnIntoObject(t)
 
-  const seen = {}
-  for (let i = 0; i < string.length; i++) {
-    debugger;
-    if (!seen[string[i]]) {
+  for (const key in object2) {
 
-      seen[string[i]] = 1
-    } else {
-      seen[string[i]] += 1
+    if (object2[key] !== object1[key]) {
+      return key
     }
   }
-  console.log(seen);
-}
-
-var count = function (string) {
-  for (let i = 0; i < string.length; i++) {
-    eachLetter(string, string[i])
-
-  }
-}
+};

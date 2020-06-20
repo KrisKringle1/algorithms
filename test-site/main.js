@@ -41,21 +41,54 @@ const inputCells = document.createElement('input')
 body.appendChild(inputRows)
 body.appendChild(inputCells);
 
+inputRows.setAttribute('id', 'rowInput');
+inputCells.setAttribute('id', 'cellInput');
+
+
 inputRows.setAttribute('style', 'display: flex; justify-content: center; padding: 5px')
 inputCells.setAttribute('style', 'display: flex; justify-content: center; padding: 5px')
 
 
 
 function tableGenerator() {
-  let tableRows = inputRows.value
-  let tableCells = inputCells.value;
+  const row = document.getElementById('rowInput')
+  const cell = document.getElementById('cellInput')
+  let tableRows = row.value
+  let tableCells = cell.value;
+
+  console.log('table rows', tableRows)
+  console.log('table cells', tableCells)
   const newTable = document.createElement('table')
 
   while (tableRows > 0) {
-    const tableRow = document.create
+    debugger;
+    const tableRow = document.createElement('tr')
+    newTable.appendChild(tableRow)
+    tableRow.setAttribute('style', 'border: 1px solid black')
+    const text = document.createTextNode('hi mom!')
+    tableRow.appendChild(text)
+    while (tableCells > 0) {
+      const cellText = document.createTextNode('greetings fellow programmer')
+      const tableCell = document.createElement('td');
+      tableCell.appendChild(cellText)
+      tableRow.appendChild(tableCell)
 
-    while (tableCells > 0)
+
+      tableCells--;
+    }
+    tableRows--
+    tableCells = cell.value
 
   }
+  body.appendChild(newTable)
+  console.log(' i ran ! table created!')
 
 }
+
+const button = document.createElement('button')
+const buttonText = document.createTextNode('Create Table');
+button.appendChild(buttonText)
+
+button.addEventListener('click', tableGenerator);
+
+body.appendChild(button)

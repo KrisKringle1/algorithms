@@ -5,12 +5,11 @@
  */
 var createTargetArray = function (nums, index) {
 
-  const arrayCopy = nums;
+  let targetArray = []
 
-  index.forEach(element => {
-    debugger;
-    arrayCopy.splice(element, 1, nums[element])
-  })
-  return arrayCopy
+  for (let i = 0; i < nums.length; i++) {
+    targetArray.splice(index[i], 0, nums[i])
+  }
 
+  return targetArray
 };

@@ -14,7 +14,7 @@ var maxProduct = function (nums) {
   let secondNumber = null;
 
   for (let i = 0; i < nums.length; i++) {
-    debugger;
+
     if (!firstNumber) {
       firstNumber = nums[i]
     }

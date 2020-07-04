@@ -10,8 +10,32 @@ var maximum69Number = function (num) {
 
   //return value
 
-  const string = num + ""
+  let string = num + ""
+  let array = []
   let i = 0
+  let k = 0
+  let hasSwapped = false
+  let returnString = ""
 
-  while ()
+  while (i < string.length) {
+    array.push(string[i])
+    i++
+  }
+
+  while (k < array.length) {
+    if (array[k] === "6" && hasSwapped === false) {
+      array[k] = "9"
+      hasSwapped = true
+    }
+
+
+    returnString += array[k]
+    k++
+
+
+  }
+
+  return parseInt(returnString)
+
+
 };

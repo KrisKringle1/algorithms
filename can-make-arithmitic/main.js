@@ -3,21 +3,25 @@
  * @return {boolean}
  */
 var canMakeArithmeticProgression = function (array) {
-  //loop through array
-  //check if array at i + 1 is + or - 2
-  //while it does, continue, if ot doesnt, return false
 
-  let i = 0
-  if (array[i + 1] > array[i]) {
-    while (i < array.length) {
-
-      if (array[i + 1] - array[i] !== 2) {
+  const sort = array.sort();
+  let i = 0;
+  if (sort[i] === sort[i + 1]) {
+    while (i < sort) {
+      if (sort[i] !== sort[i + 1]) {
         return false
       }
-
       i++
     }
     return true
   }
+  for (i < sort.length; i++) {
 
+    if (sort[i + 1] - sort[i] !== 2 && sort[i + 1] !== undefined) {
+
+      return false
+    }
+  }
+
+  return true
 };

@@ -4,24 +4,15 @@
  */
 var canMakeArithmeticProgression = function (array) {
 
-  const sort = array.sort();
-  let i = 0;
-  if (sort[i] === sort[i + 1]) {
-    while (i < sort) {
-      if (sort[i] !== sort[i + 1]) {
-        return false
-      }
-      i++
-    }
-    return true
-  }
-  for (i < sort.length; i++) {
+  const sortedArray = array.sort()
+  let i = 0
+  const difference = sortedArray[1] - sortedArray[0]
 
-    if (sort[i + 1] - sort[i] !== 2 && sort[i + 1] !== undefined) {
-
+  while (i < sortedArray.length) {
+    if (sortedArray[i + 1] - sortedArray[i] !== difference) {
       return false
     }
+    i++
   }
-
   return true
 };

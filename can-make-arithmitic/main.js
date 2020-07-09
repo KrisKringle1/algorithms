@@ -9,7 +9,8 @@ var canMakeArithmeticProgression = function (array) {
   const difference = sortedArray[1] - sortedArray[0]
 
   while (i < sortedArray.length) {
-    if (sortedArray[i + 1] - sortedArray[i] !== difference) {
+
+    if (sortedArray[i + 1] - sortedArray[i] !== difference && sortedArray[i + 1] !== undefined) {
       return false
     }
     i++

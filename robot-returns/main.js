@@ -15,7 +15,28 @@ var judgeCircle = function (moves) {
   let rightLeft = 0
 
   for (let i = 0; i < moves.length; i++) {
-
+    switch (moves[i]) {
+      case "U":
+        upDown++
+        break;
+      case "D":
+        upDown--
+        break;
+      case "R":
+        rightLeft++
+        break;
+      case "L":
+        rightLeft--
+        break;
+      default:
+        return false
+    }
   }
+  if (rightLeft === 0 && upDown === 0) {
+    return true
+  } else {
+    return false
+  }
+
 
 };

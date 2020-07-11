@@ -17,12 +17,14 @@ var calPoints = function (array) {
   let mostRecent = null
   let secondMostRecent = null
   let thirdMostRecent = null
+  let fourthMostRecent = null
 
   for (let i = 0; i < array.length; i++) {
 
     if (parseInt(array[i])) {
 
       score += parseInt(array[i])
+      fourthMostRecent = thirdMostRecent
       thirdMostRecent = secondMostRecent
       secondMostRecent = mostRecent
 
@@ -35,6 +37,7 @@ var calPoints = function (array) {
 
 
         case "D":
+          fourthMostRecent = thirdMostRecent
           thirdMostRecent = secondMostRecent
           secondMostRecent = mostRecent
           mostRecent = mostRecent * 2
@@ -45,8 +48,13 @@ var calPoints = function (array) {
           score = score - parseInt(mostRecent)
           mostRecent = secondMostRecent;
           secondMostRecent = thirdMostRecent
+          thirdMostRecent = fourthMostRecent
+          fourthMostRecent = null
           break;
         case "+":
+          if (!secondMostRecent) {
+            secondMostRecent = fourthMostRecent
+          }
           score = score + parseInt(secondMostRecent) + parseInt(mostRecent)
           thirdMostRecent = secondMostRecent
           secondMostRecent = mostRecent

@@ -10,6 +10,7 @@ var reformatDate = function (date) {
   //push the middle 3 indexes together to make a variable month
   //push the last 4 elements of the string into a new variable "year"
   //create a return string that matches the desired output
+  debugger;
   if (date.length === 13) {
     const day = date[0] + date[1]
     const month = date[5] + date[6] + date[7]
@@ -23,10 +24,10 @@ var reformatDate = function (date) {
       case "Feb":
         numMonth = "02"
         break;
-      case "March":
+      case "Mar":
         numMonth = "03"
         break;
-      case "April":
+      case "Apr":
         numMonth = "04"
         break;
       case "May":
@@ -58,7 +59,7 @@ var reformatDate = function (date) {
   }
 
   if (date.length === 12) {
-    const day = date[0]
+    const day = "0" + date[0]
     const month = date[4] + date[5] + date[6]
     const year = date[8] + date[9] + date[10] + date[11]
     let numMonth = null;
@@ -69,10 +70,10 @@ var reformatDate = function (date) {
       case "Feb":
         numMonth = "02"
         break;
-      case "March":
+      case "Mar":
         numMonth = "03"
         break;
-      case "April":
+      case "Apr":
         numMonth = "04"
         break;
       case "May":

@@ -3,7 +3,8 @@
  * @return {number}
  */
 var firstUniqChar = function (s) {
-  if (!s || s.length === 2) {
+  debugger;
+  if (!s) {
     return -1
   }
   for (let i = 0; i < s.length; i++) {
@@ -11,4 +12,6 @@ var firstUniqChar = function (s) {
       return i
     }
   }
+
+  return -1
 };

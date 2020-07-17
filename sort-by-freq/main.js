@@ -25,18 +25,16 @@ var frequencySort = function (string) {
   let i = sort.length
   debugger;
   for (const property in setObj) {
-    debugger;
-
-    while (setObj[property] !== sort[i] && i > 0) {
-      i--
+    
+    emptyString
+    
+    if(setObj[property > 1]){
+      while (setObj[property] > 0) {
+        emptyString += property
+        setObj[property]--
+      }
     }
-
-
-
-    while (setObj[property] > 0) {
-      emptyString += property
-      setObj[property]--
-    }
+   
   }
 
 

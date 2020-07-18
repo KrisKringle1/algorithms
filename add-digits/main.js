@@ -7,10 +7,20 @@ var addDigits = function (num) {
   //while string.length > 1, add the 2 digets together
   //return the number
   const string = num.toString()
-  let number = 0
+  let number = 10
 
-  for (let i = 0; i < string.length; i++) {
-    number = number + string[i]
+  function addition() {
+    for (let i = 0; i < string.length; i++) {
+      if (i === 0) {
+        number = 0
+      }
+      number = number + parseInt(string[i])
+    }
+    return number
+  }
+  while (number >= 10) {
+    addition()
   }
 
+  return number
 };

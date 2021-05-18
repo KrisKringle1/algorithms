@@ -7,17 +7,18 @@
     let sum;
     let product;
     for(let i = 0; i < stringNumber.length; i++){
-        if(!sum){
+        if(typeof sum === "undefined"){
            sum = parseInt(stringNumber[i])
         } else {
             sum += parseInt(stringNumber[i])
         }
 
-        if(!product){
+        if(typeof product === "undefined"){
             product = parseInt(stringNumber[i])
         } else {
             product *= parseInt(stringNumber[i])
         }
+        
 
     }
     return product - sum

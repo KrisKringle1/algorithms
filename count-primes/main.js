@@ -24,4 +24,6 @@ var countPrimes = function (initialNumber) {
   }
 
   return counter;
+
+console.log('test');
 }

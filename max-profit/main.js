@@ -26,5 +26,13 @@ var maxProfit = function (prices) {
     }
   }
 
-  for (lowestPriceIndex < prices.length; lowestPriceIndex++; ) {}
+  for (lowestPriceIndex < prices.length; lowestPriceIndex++; ) {
+    let currPrice = prices[lowestPriceIndex];
+    if (!highestNumber) {
+      highestNumber = currPrice;
+    }
+    if (currPrice > highestNumber) {
+      highestNumber = currPrice;
+    }
+  }
 };

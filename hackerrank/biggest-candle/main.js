@@ -35,26 +35,24 @@ function birthdayCakeCandles(candles) {
   //loop through array
   //keep counting until you hit a diferent number than first index
   //return count
-  const sort = candles.sort((a, b) => b - a);
 
-  let highestNum;
+  let highestNum = {};
   let count = 0;
 
-  for (let i = 0; i < sort.length; i++) {
-    const curr = sort[i];
+  for (let i = 0; i < candles.length; i++) {
+    const curr = candles[i];
 
-    console.log("curr ", curr);
-
-    if (!highestNum) {
-      highestNum = curr;
-    }
-
-    if (curr === highestNum) {
-      count++;
+    if (!highestNum[curr]) {
+      highestNum[curr] = 1;
     } else {
-      return count;
+      highestNum[curr]++;
     }
   }
+
+  const values = Object.values(highestNum);
+
+  const sorted = values.sort((a, b) => b - a);
+  return sorted[0];
 }
 
 function main() {

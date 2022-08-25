@@ -15,7 +15,32 @@ var lengthOfLongestSubstring = function (s) {
     */
 
   let firstString = "";
+  let buildFirst = true;
+  let buildSecond = true;
   let secondString = "";
 
-  for (let i = 0; i < s.length; i++) {}
+  for (let i = 0; i < s.length; i++) {
+    const curr = s[i];
+
+    if (!firstString.includes(curr) && buildFirst) {
+      firstString += curr;
+    } else {
+      buildFirst = false;
+    }
+
+    if (!secondString.includes(curr) && buildSecond && !buildFirst) {
+      secondString += curr;
+    } else {
+      if (secondString.length > firstString.length) {
+        firstString = "";
+        buildFirst = true;
+      } else {
+        secondString = "";
+        buildSecond = true;
+      }
+    }
+  }
+  return secondString.length > firstString.length
+    ? secondString.length
+    : firstString.length;
 };

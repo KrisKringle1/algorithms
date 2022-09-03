@@ -4,4 +4,7 @@
  * @param {string} ruleValue
  * @return {number}
  */
-var countMatches = function (items, ruleKey, ruleValue) {};
+var countMatches = function (items, ruleKey, ruleValue) {
+  //loop through itms
+  //check if item contains ruleValue
+};

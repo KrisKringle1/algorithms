@@ -5,7 +5,7 @@
 var addDigits = function (num) {
   while (nums > 10) {
     nums.toString();
-    let newNum;
+    let newNum = 0;
     for (let i = 0; i < nums.length; i++) {
       newNum += parseInt(nums[i]);
     }

@@ -18,4 +18,21 @@ var deleteDuplicates = function (head) {
   //continue looping
 
   const seen = {};
+
+  for (let i = 0; i < head.length; i++) {
+    const curr = head[i];
+    if (seen[curr]) {
+      head.splice(i, 1);
+      i--;
+    }
+
+    if (head.indexOf(curr) !== head.lastIndexOf(curr)) {
+      seen[curr];
+      head.splice(i, 1);
+      i--;
+    }
+
+    seen[curr] = curr;
+  }
+  return head;
 };

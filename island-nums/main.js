@@ -13,24 +13,27 @@ var numIslands = function (grid) {
   //continue dfs
   //if number is 0, return
 
-  const dfs = (i, j) => {
-    debugger;
-    if (grid[i + 1][j] && grid[i + 1][j] === "1") {
-      grid[i + 1][j] = "0";
-      dfs(i + 1, j);
+  if (grid.length == 0 || grid === null) {
+    return 0;
+  }
+
+  const dfs = (grid, i, j) => {
+    if (
+      i < 0 ||
+      i >= grid.length ||
+      j < 0 ||
+      j > grid[i].length ||
+      grid[i][j] === 0
+    ) {
+      return 0;
     }
 
-    if (grid[i - 1][j] && grid[i - 1][j] === "1") {
-      grid[i - 1][j] = "0";
-      dfs(i - 1, j);
-    }
-
-    if (grid[i][j + 1] && grid[i][j + 1] === "1") {
-      grid[i][j + 1] = "0";
-      dfs(i, j + 1);
-    }
-
-    return;
+    grid[i][j] = "0";
+    dfs(grid, i + 1, j);
+    dfs(grid, i - 1, j);
+    dfs(grid, i, j - 1);
+    dfs(grid, i, j + 1);
+    return 1;
   };
 
   let islandCount = 0;
@@ -41,8 +44,7 @@ var numIslands = function (grid) {
       const item = row[j];
 
       if (item === "1") {
-        islandCount++;
-        dfs(i, j);
+        islandCount += dfs(grid, i, j);
       }
     }
   }

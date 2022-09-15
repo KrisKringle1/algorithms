@@ -4,22 +4,35 @@
  * @return {number}
  */
 var searchInsert = function (nums, target) {
-  //loop through nums
-  //if nums[i-1] < nums[i] && nums[i] < nums[i + 1] return i
+  //binary search
+  //let high = nums.length
+  //let low = 0
+  //do
+  //const mid = Math.floor(low + (high - low) /2 )
+  //const value = nums[value]
+  //if(value === target)
+  //return mid
+  //else if value > target
+  //low  = mid + 1
+  //else
+  //high = mid
+  //while (low < high)
+  //return -1
 
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === target) {
-      return i;
+  let high = nums.length;
+  let low = 0;
+
+  do {
+    const mid = Math.floor(low + (high - low) / 2);
+    const value = nums[mid];
+
+    if (value === target) {
+      return mid;
+    } else if (value < target) {
+      low = mid + 1;
+    } else {
+      high = low;
     }
-
-    if (nums[i - 1] < target && target < nums[i + 1]) {
-      return i;
-    }
-
-    if (nums[i - 1] < target && nums[i + 1] === undefined) {
-      return i + 1;
-    }
-
-    if (nums[i - 1] === undefined && target < nums[i]) return i;
-  }
+  } while (low < high);
+  return -1;
 };

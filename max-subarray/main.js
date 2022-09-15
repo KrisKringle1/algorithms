@@ -3,46 +3,24 @@
  * @return {number}
  */
 var maxSubArray = function (nums) {
-  //sort array
-  //return the sum of the last 2 in the array
+  //create a max variable
+  //get the starting number
+  //return nums[0] if length is 1
+  //math.max of the max number or accumulated number
+  //return max number
+
   if (nums.length === 1) {
-    return nums[0]
+    return nums[0];
   }
+  let max = nums[0];
+  let acc = nums[0];
+  for (let i = 1; i < nums.length; i++) {
+    let calc = Math.max(nums[i], acc + nums[i]);
 
-  const sortedArray = nums.sort((a, b) => a - b);
-  const lastIndex = sortedArray.length - 1
-  let secondLastIndex = sortedArray.length - 2
-
-  if (sortedArray[lastIndex] === sortedArray[secondLastIndex]) {
-    while (sortedArray[secondLastIndex] === sortedArray[lastIndex]) {
-      secondLastIndex--;
+    if (calc > max) {
+      max = calc;
     }
+    acc = calc;
   }
-  const first = sortedArray[lastIndex];
-  const last = sortedArray[secondLastIndex];
-
-  if (Math.sign(first) === -1 && Math.sign(last) === -1) {
-    return last - first
-  }
-
-  const max = first + last;
-
-  if (max === -1) {
-    return 1
-  }
-
-
   return max;
 };
-
-
-// solution ?
-
-//   let maxSubArray = A => {
-//     let sum = A[0],
-//       max = A[0];
-//     for (let i = 1; i < A.length; ++i)
-//       sum = Math.max(sum + A[i], A[i]),
-//         max = Math.max(max, sum);
-//     return max;
-//   };

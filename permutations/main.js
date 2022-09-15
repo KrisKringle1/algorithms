@@ -3,25 +3,24 @@
  * @return {number[][]}
  */
 var permute = function (nums) {
-  // loop through each of the nums
-  //create a tracking function
-  //track checks to see if the number is included in teh array
-  //if it isnt, track the num in the array
-  //recursively call the track a function
-  const answer = [];
+  //global result
+  const result = [];
 
-  const track = (curr) => {
-    if (curr.length === nums.length) {
-      answer.push(curr);
-      return;
+  //dfs helper function
+  const dfs = (i, nums) => {
+    //base case
+    if (i === nums.length) {
+      result.push(nums.slice());
+    }
+
+    //dfs recursive
+    for (let j = i; j < nums.length; j++) {
+      [nums[i], nums[j]] = [nums[j], nums[i]];
+      dfs(i + 1, nums);
+      [nums[i], nums[j]] = [nums[j], nums[i]];
     }
   };
 
-  for (const num of nums) {
-    if (!curr.includes(num)) track(...curr, num);
-  }
-
-  track();
-
-  return answer;
+  dfs(0, nums);
+  return result;
 };

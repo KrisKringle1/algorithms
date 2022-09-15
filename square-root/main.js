@@ -17,6 +17,10 @@ var mySqrt = function (x) {
       return mid;
     } else if (mid * mid > x) {
       right = mid;
+    } else if (mid * mid < x) {
+      left = mid + 1;
     }
+
+    return left - 1;
   }
 };

@@ -34,5 +34,5 @@ var searchInsert = function (nums, target) {
       high = low;
     }
   } while (low < high);
-  return -1;
+  return mid;
 };

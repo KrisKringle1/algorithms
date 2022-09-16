@@ -3,29 +3,9 @@
  * @return {number}
  */
 var lengthOfLongestSubstring = function (s) {
-  const isUnique = (s) => {
-    const set = new Set();
-    for (let i = 0; i < s.length; i++) {
-      if (set.has(s[i])) {
-        return false;
-      }
-      set.add(s[i]);
-    }
-
-    return true;
-  };
   let max = 0;
 
-  for (let begin = 0; begin < s.length; begin++) {
-    for (let end = 0; end < s.length; end++) {
-      const substring = s.substring(begin, end + 1);
-      if (isUnique(substring)) {
-        if (substring.length > max) {
-          max = substring.length;
-        }
-      }
-    }
-  }
+  for (let end = 0; end < s.length; end++) {}
 };
 
 // /**

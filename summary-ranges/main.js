@@ -15,7 +15,7 @@ var summaryRanges = function (nums) {
   const ranges = [];
   for (let i = 0; i < nums.length; i++) {
     let j = i + 1;
-    if (!firstNum) {
+    if (firstNum === null) {
       firstNum = nums[i];
     }
 
